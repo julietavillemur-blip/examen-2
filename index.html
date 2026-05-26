@@ -2,41 +2,71 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Julieta Villemur</title>
+    <title>Julieta Villemur | Diseño</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; }
-        .card { border: 1px solid #ccc; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-        ul { list-style-type: square; }
-        .boton-video { display: block; padding: 20px; background: #5d4037; color: white; text-align: center; text-decoration: none; border-radius: 10px; }
+        :root { --color-crema: #fdfbf7; --color-tierra: #5d4037; --color-terracota: #a68a64; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--color-crema); color: var(--color-tierra); margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; }
+        .card { background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { font-family: 'Playfair Display', serif; color: var(--color-tierra); }
+        .hero { background: var(--color-terracota); color: white; padding: 40px; text-align: center; border-radius: 15px; margin-bottom: 30px; }
+        
+        .servicios-list { list-style-type: square; padding-left: 20px; }
+        .servicios-list li { margin-bottom: 10px; font-weight: bold; color: var(--color-tierra); }
+
+        /* Contenedor del video para asegurar que se vea */
+        .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-top: 20px; background: #000; }
+        .video-box iframe { position: absolute; top:0; left:0; width: 100%; height: 100%; }
+        
+        .boton-blog { display: inline-block; padding: 12px 20px; background-color: var(--color-tierra); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; }
+        img { width: 100%; border-radius: 10px; margin-top: 15px; }
     </style>
 </head>
 <body>
 
-    <section class="card">
+<div class="container">
+    <header class="hero">
         <h1>Julieta Villemur</h1>
-        <!-- Aquí llamamos a la foto local -->
-        <img src="foto.jpg" alt="Mi trabajo" style="width:100%; border-radius:10px;">
+        <p>Diseño Gráfico & Arte Manual</p>
+    </header>
+
+    <section id="trayectoria" class="card">
+        <h2>Mi Trayectoria</h2>
+        <p>Soy Julieta Villemur, diseñadora gráfica egresada de la UPC en 2024. Dirijo <strong>Punto Creativo</strong>, emprendimiento donde combino diseño y técnicas manuales.</p>
+        <p>Referente: <em>Pilar dibujito</em>. Interés principal: Crear identidades visuales y llevar el diseño a lo artesanal.</p>
+        
+        <!-- Imagen embebida -->
+        <img src="foto.webp.webp" alt="Proceso de encuadernación artesanal">
         
         <h2>Servicios de Punto Creativo:</h2>
-        <ul>
+        <ul class="servicios-list">
             <li>Diseño de packaging</li>
             <li>Libretas personalizadas</li>
             <li>Stickers personalizados</li>
             <li>Identidades visuales</li>
             <li>Marcadores magnéticos</li>
         </ul>
-        <a href="https://julietavillemur.blogspot.com/?m=1">Visitar mi blog</a>
+        
+        <a href="https://julietavillemur.blogspot.com/?m=1" target="_blank" class="boton-blog">Visitar mi Blog Personal</a>
     </section>
 
-    <section class="card">
+    <section id="inspiracion" class="card">
         <h2>Inspiración Musical</h2>
-        <!-- ESTO ES LO QUE SE VA A VER SIEMPRE -->
-        <a href="https://www.youtube.com/watch?v=3-z9I2k4G4g" target="_blank" class="boton-video">
-            ▶ HACER CLIC AQUÍ PARA VER EL VIDEO
-        </a>
+        <!-- Video embebido -->
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/3-z9I2k4G4g" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <p><small>Autoría: "Seguir viviendo sin tu amor" por Luis Alberto Spinetta.</small></p>
     </section>
 
-</body>
-</html>
+    <footer>
+        <p>examen laboratorio digital © 2026 by julieta villemur</p>
+    </footer>
+</div>
+
 </body>
 </html>
