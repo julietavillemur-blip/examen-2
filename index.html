@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Julieta Villemur | Diseño</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --color-crema: #fdfbf7; --color-tierra: #5d4037; --color-terracota: #a68a64; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--color-crema); color: var(--color-tierra); margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; }
+        .card { background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { font-family: 'Playfair Display', serif; color: var(--color-tierra); }
+        .hero { background: var(--color-terracota); color: white; padding: 40px; text-align: center; border-radius: 15px; margin-bottom: 30px; }
+        .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-top: 20px; }
+        .video-box iframe { position: absolute; top:0; left:0; width: 100%; height: 100%; }
+        a { color: var(--color-terracota); font-weight: bold; }
+        img { width: 100%; border-radius: 10px; }
+    </style>
 </head>
 <body>
 
@@ -12,36 +23,37 @@
     <header class="hero">
         <h1>Julieta Villemur</h1>
         <p>Diseño Gráfico & Arte Manual</p>
+        <nav>
+            <a href="#sobre-mi" style="color:white;">Sobre mí</a> | 
+            <a href="#multimedia" style="color:white;">Multimedia</a>
+        </nav>
     </header>
 
-    <main>
-        <section class="card">
-            <h2>Sobre mí</h2>
-            <p>Diseñadora gráfica egresada de la UPC en 2024. Gestiono <strong>Punto Creativo</strong>, donde busco llevar el diseño hacia lo manual.</p>
-            <p>Mi referente es <em>Pilar dibujito</em> por su revalorización de la cultura argentina.</p>
-            <img src="encuadernacion.jpg" alt="Proceso de diseño" class="imagen-diseno">
-        </section>
+    <section id="sobre-mi" class="card">
+        <h2>Mi Trayectoria</h2>
+        <p>Soy Julieta Villemur, diseñadora gráfica egresada de la UPC en 2024. Dirijo <strong>Punto Creativo</strong>, donde combino diseño y artesanía.</p>
+        <p>Referente: <em>Pilar dibujito</em>. Interés: Identidades visuales y diseño manual.</p>
+        <img src="encuadernacion.jpg" alt="Trabajo artesanal">
+        
+        <h2>Servicios</h2>
+        <ul>
+            <li>Diseño de packaging, libretas personalizadas, stickers, identidades visuales, marcadores magnéticos.</li>
+        </ul>
+        <p>Más en mi <a href="https://julietavillemur.blogspot.com/?m=1" target="_blank">blog personal</a>.</p>
+    </section>
 
-        <section class="card">
-            <h2>Servicios</h2>
-            <ul>
-                <li>Diseño de packaging</li>
-                <li>Libretas personalizadas</li>
-                <li>Stickers personalizados</li>
-                <li>Identidades visuales</li>
-                <li>Marcadores magnéticos</li>
-            </ul>
-            <p>Puedes visitar mi <a href="https://julietavillemur.blogspot.com/?m=1">blog aquí</a>.</p>
-        </section>
-
-        <section class="card">
-            <a href="multimedia.html">Ir a sección multimedia →</a>
-        </section>
-    </main>
+    <section id="multimedia" class="card">
+        <h2>Inspiración Musical</h2>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/3-z9I2k4G4g" allowfullscreen></iframe>
+        </div>
+        <p><small>Autoría: Luis Alberto Spinetta, vía YouTube.</small></p>
+        <a href="#">↑ Volver arriba</a>
+    </section>
 
     <footer>
-        <p><a href="#">examen laboratorio digital</a> © 2026 by <a href="#">julieta villemur</a></p>
-        <p>Licencia: <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a></p>
+        <p><a href="#">examen laboratorio digital</a> © 2026 by julieta villemur | 
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0</a></p>
     </footer>
 </div>
 
