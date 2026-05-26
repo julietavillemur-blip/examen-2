@@ -2,26 +2,129 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julieta Villemur | Diseño</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --color-crema: #fdfbf7; --color-tierra: #5d4037; --color-terracota: #a68a64; }
-        body { font-family: 'Lato', sans-serif; background-color: var(--color-crema); color: var(--color-tierra); margin: 0; padding: 20px; line-height: 1.6; }
+        :root {
+            --color-crema: #fdfbf7;
+            --color-tierra: #5d4037;
+            --color-terracota: #a68a64;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--color-crema);
+            color: var(--color-tierra);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.7;
+        }
         .container { max-width: 800px; margin: auto; }
-        .card { background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        h1, h2 { font-family: 'Playfair Display', serif; color: var(--color-tierra); }
-        .hero { background: var(--color-terracota); color: white; padding: 40px; text-align: center; border-radius: 15px; margin-bottom: 30px; }
-        .hero h1, .hero p { color: white; }
-        .servicios-list { list-style-type: square; padding-left: 20px; }
-        .servicios-list li { margin-bottom: 10px; font-weight: bold; color: var(--color-tierra); }
+
+        .hero {
+            background: var(--color-terracota);
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(166,138,100,0.3);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 2.4rem;
+            margin: 0 0 10px;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-tierra);
+            font-size: 1.5rem;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-crema);
+            margin-bottom: 20px;
+        }
+        p { margin-top: 0; color: #6b5244; }
+
+        .foto-wrap {
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            max-height: 380px;
+        }
+        .foto-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .foto-wrap:hover img { transform: scale(1.02); }
+        .foto-caption {
+            font-size: 0.78rem;
+            color: #999;
+            margin-top: 6px;
+            text-align: right;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0 25px;
+        }
+        .servicio-item {
+            background: var(--color-crema);
+            border-left: 3px solid var(--color-terracota);
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--color-tierra);
+        }
+
+        .boton-blog {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--color-tierra);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .boton-blog:hover {
+            background-color: #3e2723;
+            transform: translateY(-1px);
+        }
 
         .video-box {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-top: 20px;
+            background: #111;
         }
         .video-box iframe {
             position: absolute;
@@ -30,12 +133,24 @@
             border: 0;
         }
 
-        .boton-blog { display: inline-block; padding: 12px 20px; background-color: var(--color-tierra); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; }
-        img.foto { width: 100%; border-radius: 10px; margin-top: 15px; }
+        footer {
+            text-align: center;
+            padding: 20px 0 10px;
+            font-size: 0.82rem;
+            color: #b0a090;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 500px) {
+            .servicios-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+            .card { padding: 25px 20px; }
+        }
     </style>
 </head>
 <body>
 <div class="container">
+
     <header class="hero">
         <h1>Julieta Villemur</h1>
         <p>Diseño Gráfico &amp; Arte Manual</p>
@@ -46,23 +161,27 @@
         <p>Soy Julieta Villemur, diseñadora gráfica egresada de la UPC en 2024. Dirijo <strong>Punto Creativo</strong>, emprendimiento donde combino diseño y técnicas manuales.</p>
         <p>Referente: <em>Pilar dibujito</em>. Interés principal: Crear identidades visuales y llevar el diseño a lo artesanal.</p>
 
-        <img class="foto" src="foto_webp.webp" alt="Proceso de encuadernación artesanal">
+        <div class="foto-wrap">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Hand_sewn_headband.jpg/1280px-Hand_sewn_headband.jpg"
+                 alt="Encuadernación artesanal cosida a mano"
+                 loading="lazy">
+        </div>
+        <p class="foto-caption">Encuadernación artesanal — vía Wikimedia Commons (CC)</p>
 
-        <h2>Servicios de Punto Creativo:</h2>
-        <ul class="servicios-list">
-            <li>Diseño de packaging</li>
-            <li>Libretas personalizadas</li>
-            <li>Stickers personalizados</li>
-            <li>Identidades visuales</li>
-            <li>Marcadores magnéticos</li>
-        </ul>
+        <h2>Servicios de Punto Creativo</h2>
+        <div class="servicios-grid">
+            <div class="servicio-item">Diseño de packaging</div>
+            <div class="servicio-item">Libretas personalizadas</div>
+            <div class="servicio-item">Stickers personalizados</div>
+            <div class="servicio-item">Identidades visuales</div>
+            <div class="servicio-item">Marcadores magnéticos</div>
+        </div>
 
         <a href="https://julietavillemur.blogspot.com/?m=1" target="_blank" class="boton-blog">Visitar mi Blog Personal</a>
     </section>
 
     <section id="inspiracion" class="card">
         <h2>Inspiración Musical</h2>
-
         <div class="video-box">
             <iframe
                 src="https://www.youtube.com/embed/T_FkEw27XJ0"
@@ -71,13 +190,13 @@
                 allowfullscreen>
             </iframe>
         </div>
-
-        <p><small>Autoría: "De Música Ligera" (Soda Stereo), vía YouTube.</small></p>
+        <p style="margin-top:12px;"><small>Autoría: "De Música Ligera" (Soda Stereo), vía YouTube.</small></p>
     </section>
 
     <footer>
         <p>examen laboratorio digital © 2026 by julieta villemur</p>
     </footer>
+
 </div>
 </body>
 </html>
