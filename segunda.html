@@ -5,19 +5,21 @@
     <title>Multimedia | Julieta Villemur</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .boton-video {
-            display: inline-block;
-            padding: 15px 25px;
-            background-color: #8d6e63; /* Terracota */
-            color: white !important;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
+        /* Contenedor responsivo para el video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
             margin: 20px 0;
-            transition: background 0.3s;
+            border-radius: 10px;
         }
-        .boton-video:hover {
-            background-color: #5d4037;
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -25,15 +27,20 @@
     <div class="container">
         <div class="card">
             <h1>Inspiración Musical</h1>
-            <p>El rock nacional siempre acompaña mi proceso creativo. Te comparto este tema:</p>
+            <p>El rock nacional siempre acompaña mi proceso creativo. Aquí puedes reproducir este tema:</p>
             
-            <a href="https://www.youtube.com/watch?v=3-z9I2k4G4g" target="_blank" class="boton-video">
-                Escuchar: Luis Alberto Spinetta - Seguir viviendo sin tu amor
-            </a>
+            <!-- Embebido real del video -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/3-z9I2k4G4g" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
             
-            <p><small>Autoría: Luis Alberto Spinetta, vía YouTube.</small></p>
+            <p><small>Autoría del video: Luis Alberto Spinetta, vía YouTube (Canal oficial).</small></p>
             
-            <br>
             <a href="index.html">← Volver al inicio</a>
         </div>
     </div>
